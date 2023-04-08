@@ -23,12 +23,12 @@ const Home: NextPage = () => {
     }
   };
 
-  const prompt = `Generate a lesson plan with a structured format for ${vibe} students. ${
+  const prompt = `Generate a lesson with 5 sub-sections aka modules  with a structured format for ${vibe} students. ${
     vibe === "12st Grade"
       ? "Make sure the lesson plan its professional and well structured."
       : null
   }
-      Make sure each lesson plan module  is at less 560 characters, and base them on this subject: ${bio}${
+      Make sure each lesson plan sub section module is at less 160 characters, and base them on this subject: ${bio}${
     bio.slice(-1) === "." ? "" : "."
   }`;
 
