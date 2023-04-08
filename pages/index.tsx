@@ -23,12 +23,12 @@ const Home: NextPage = () => {
     }
   };
 
-  const prompt = `Generate a lesson plan with 5 modules for ${vibe} students. ${
-    vibe === "1st Grade"
-      ? "Make sure the lesson plan its for a 1st Grade student."
+  const prompt = `Generate 2 ${vibe} twitter biographies with no hashtags and clearly labeled "1." and "2.". ${
+    vibe === "Funny"
+      ? "Make sure there is a joke in there and it's a little ridiculous."
       : null
   }
-      Make sure each lesson plan module  is at less than 260 characters,  base them on this subject: ${bio}${
+      Make sure each generated biography is less than 160 characters, has short sentences that are found in Twitter bios, and base them on this context: ${bio}${
     bio.slice(-1) === "." ? "" : "."
   }`;
 
