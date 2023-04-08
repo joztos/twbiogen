@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import DropDown, { VibeType } from "../components/DropDown";
+import DropDown, { GradeLevel } from "../components/DropDown";
 import Footer from "../components/Footer";
 import Github from "../components/GitHub";
 import Header from "../components/Header";
@@ -11,30 +11,23 @@ import LoadingDots from "../components/LoadingDots";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
-  const [bio, setBio] = useState("");
-  const [vibe, setVibe] = useState<VibeType>("Professional");
-  const [generatedBios, setGeneratedBios] = useState<String>("");
+  const [subject, setSubject] = useState("");
+  const [gradeLevel, setGradeLevel] = useState<GradeLevel>("Kindergarten");
+  const [generatedLessonPlan, setGeneratedLessonPlan] = useState<String>("");
 
-  const bioRef = useRef<null | HTMLDivElement>(null);
+  const lessonPlanRef = useRef<null | HTMLDivElement>(null);
 
-  const scrollToBios = () => {
-    if (bioRef.current !== null) {
-      bioRef.current.scrollIntoView({ behavior: "smooth" });
+  const scrollToLessonPlan = () => {
+    if (lessonPlanRef.current !== null) {
+      lessonPlanRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  const prompt = `Generate 2 ${vibe} twitter biographies with no hashtags and clearly labeled "1." and "2.". ${
-    vibe === "Funny"
-      ? "Make sure there is a joke in there and it's a little ridiculous."
-      : null
-  }
-      Make sure each generated biography is less than 160 characters, has short sentences that are found in Twitter bios, and base them on this context: ${bio}${
-    bio.slice(-1) === "." ? "" : "."
-  }`;
+  const prompt = `Generate a lesson plan for ${subject} subject in ${gradeLevel} grade level. Make sure the lesson plan is concise and well-structured.`;
 
-  const generateBio = async (e: any) => {
+  const generateLessonPlan = async (e: any) => {
     e.preventDefault();
-    setGeneratedBios("");
+    setGeneratedLessonPlan("");
     setLoading(true);
     const response = await fetch("/api/generate", {
       method: "POST",
@@ -64,16 +57,16 @@ const Home: NextPage = () => {
       const { value, done: doneReading } = await reader.read();
       done = doneReading;
       const chunkValue = decoder.decode(value);
-      setGeneratedBios((prev) => prev + chunkValue);
+      setGeneratedLessonPlan((prev) => prev + chunkValue);
     }
-    scrollToBios();
+    scrollToLessonPlan();
     setLoading(false);
   };
 
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>Twitter Bio Generator</title>
+        <title>Lesson Plan Generator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -81,7 +74,7 @@ const Home: NextPage = () => {
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
         <a
           className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
-          href="https://github.com/Nutlope/twitterbio"
+          href="https://github.com/Nutlope/lessonplangenerator"
           target="_blank"
           rel="noopener noreferrer"
         >
