@@ -23,12 +23,12 @@ const Home: NextPage = () => {
     }
   };
 
-  const prompt = `Generate 4 sub sections of a lesson plan base on this subject ${bio} that contain: Learning Objective, Assessment, Activities and Vocabulary for ${vibe} students. ${
+  const prompt = `Generate 4 ${vibe} subsections of a master lesson plan that contains: Learning Objective, Assessment, Activities and Vocabulary. ${
     vibe === "12st Grade"
-      ? "Make sure the lesson plan its for 12st grade students."
+      ? "Make sure the lesson plan its professional and well structured."
       : null
   }
-      Make sure each sub section module is at less 260 characters, and base them on this subject: ${bio}${
+      Make sure each lesson plan sub section module is at less 260 characters, and base them on this subject: ${bio}${
     bio.slice(-1) === "." ? "" : "."
   }`;
 
