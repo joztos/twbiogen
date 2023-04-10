@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState,  useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import DropDown, { VibeType } from "../components/DropDown";
 import Footer from "../components/Footer";
@@ -22,6 +22,10 @@ const Home: NextPage = () => {
       bioRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    console.log(generatedBios);
+  },[generatedBios])
 
   const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as 1st Grade, 2st Grade. They all have their own topic to be created lesson plan. Please create lesson plan according to studentgradelevel and topic and format in HTML so that I can use that in my react project. Now studentgradelevel is " + vibe + " and topic is " + bio + "\n";
 
@@ -143,7 +147,6 @@ const Home: NextPage = () => {
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         <div className="space-y-10 my-10">
-          {console.log(generatedBios)}
           {generatedBios && (
             <>
               <div>
