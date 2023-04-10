@@ -23,15 +23,9 @@ const Home: NextPage = () => {
     }
   };
 
-  const prompt = `Generate 4 ${vibe} subsections of a  lesson plan that contains: Learning Objective, Assessment, Activities and Vocabulary.and clearly labeled "1.", "2.", "3." and "4."  ${
-    vibe === "12st Grade"
-      ? "Make sure the lesson plan its professional and well structured."
-      : null
-  }
-      Make sure each lesson plan sub section module is at less 300 characters, and base them on this subject: ${bio}${
-    bio.slice(-1) === "." ? "" : "."
-  }`;
+  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as 1st Grade, 2st Grade. They all have their own topic to be created lesson plan. Please create best lesson plan according to studentgradelevel and topic. Now studentgradelevel is " + vibe + " and topic is " + bio + "\n";
 
+  console.log(prompt);
   const generateBio = async (e: any) => {
     e.preventDefault();
     setGeneratedBios("");
