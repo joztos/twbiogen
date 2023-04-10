@@ -29,7 +29,7 @@ const Home: NextPage = () => {
     console.log(generatedBios);
   },[generatedBios])
 
-  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as Primero de Primaria, Segundo de Primaria. They all have their own topic to be created lesson plan. Please create long and perfect lesson plan according to studentgradelevel and topic.  Now studentgradelevel is " + vibe + " and topic is " + bio + "\n. Your response must be formatted using HTML Elements for easier readability, including paragraph tags, line breaks, headings and bold titles where applicable, no need to create Full HTML Page including head, title elements";
+  const prompt = "Estoy creando una aplicación que genera planeaciones de clase para estudiantes. Contamos con varios niveles de grado de estudiantes, como Primero de Primaria, Segundo de Primaria.. Todos ellos tienen su propio tema para crear una planeacion de clase. Por favor, crea un planeacion de clase larga y perfecta de acuerdo al nivel de grado del estudiante y al tema..  grado del estudiante es " + vibe + " el tema es " + bio + "\n. Your response must be formatted using HTML Elements for easier readability, including paragraph tags, line breaks, headings and bold titles where applicable, no need to create Full HTML Page including head, title elements";
 
   const generateBio = async (e: any) => {
     e.preventDefault();
