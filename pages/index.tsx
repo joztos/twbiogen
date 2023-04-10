@@ -103,9 +103,9 @@ const Home: NextPage = () => {
             <p className="text-left font-medium">
               Escribe el tema para tu planeación de clase.{" "}
               <span className="text-slate-500">
-                ()
+                
               </span>
-              .
+              
             </p>
           </div>
           <textarea
