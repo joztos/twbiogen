@@ -85,12 +85,12 @@ const Home: NextPage = () => {
           rel="noopener noreferrer"
         >
           <Github />
-          <p>Star on GitHub</p>
+          <p></p>
         </a>
         <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
-          Generate your next Twitter bio using chatGPT
+          Genera tu planeación de clase,
         </h1>
-        <p className="text-slate-500 mt-5">47,118 bios generated so far.</p>
+        <p className="text-slate-500 mt-5">2,118 planeaciones generadas hasta ahora.</p>
         <div className="max-w-xl w-full">
           <div className="flex mt-10 items-center space-x-3">
             <Image
@@ -101,9 +101,9 @@ const Home: NextPage = () => {
               className="mb-5 sm:mb-0"
             />
             <p className="text-left font-medium">
-              Copy your current bio{" "}
+              Escribe el tema para tu planeación de clase.{" "}
               <span className="text-slate-500">
-                (or write a few sentences about yourself)
+                (las celulas del cuerpo humano, por ejemplo..)
               </span>
               .
             </p>
@@ -119,7 +119,7 @@ const Home: NextPage = () => {
           />
           <div className="flex mb-5 items-center space-x-3">
             <Image src="/2-black.png" width={30} height={30} alt="1 icon" />
-            <p className="text-left font-medium">Select your vibe.</p>
+            <p className="text-left font-medium">Selecciona el Grado Escolar.</p>
           </div>
           <div className="block">
             <DropDown vibe={vibe} setVibe={(newVibe) => setVibe(newVibe)} />
@@ -130,7 +130,7 @@ const Home: NextPage = () => {
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               onClick={(e) => generateBio(e)}
             >
-              Generate your bio &rarr;
+              Generar Planeación &rarr;
             </button>
           )}
           {loading && (
