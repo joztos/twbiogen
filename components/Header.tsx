@@ -7,7 +7,7 @@ export default function Header() {
       <Link href="/" className="flex space-x-3">
         <Image
           alt="header text"
-          src="/writingIcon.png"
+          src="https://emdischool.edu.ec/port/images/logo%20emdi%20azul.png?crc=397001260"
           className="sm:w-12 sm:h-12 w-8 h-8"
           width={32}
           height={32}
