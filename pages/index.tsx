@@ -88,7 +88,7 @@ const Home: NextPage = () => {
           <p></p>
         </a>
         <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
-          Genera tu planeación de clase,
+          Genera tu planeación de Clase con Navi AI
         </h1>
         <p className="text-slate-500 mt-5">2,118 planeaciones generadas hasta ahora.</p>
         <div className="max-w-xl w-full">
