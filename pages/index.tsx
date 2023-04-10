@@ -14,7 +14,7 @@ import parse from 'html-react-parser';
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
-  const [vibe, setVibe] = useState<VibeType>("1st Grade");
+  const [vibe, setVibe] = useState<VibeType>("Primero de Primaria");
   const [generatedBios, setGeneratedBios] = useState<string>("");
 
   const bioRef = useRef<null | HTMLDivElement>(null);
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
     console.log(generatedBios);
   },[generatedBios])
 
-  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as 1st Grade, 2st Grade. They all have their own topic to be created lesson plan. Please create long and perfect lesson plan according to studentgradelevel and topic.  Now studentgradelevel is " + vibe + " and topic is " + bio + "\n. Your response must be formatted using HTML Elements for easier readability, including paragraph tags, line breaks, headings and bold titles where applicable, no need to create Full HTML Page including head, title elements";
+  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as Primero de Primaria, Segundo de Primaria. They all have their own topic to be created lesson plan. Please create long and perfect lesson plan according to studentgradelevel and topic.  Now studentgradelevel is " + vibe + " and topic is " + bio + "\n. Your response must be formatted using HTML Elements for easier readability, including paragraph tags, line breaks, headings and bold titles where applicable, no need to create Full HTML Page including head, title elements";
 
   const generateBio = async (e: any) => {
     e.preventDefault();
