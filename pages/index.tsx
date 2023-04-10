@@ -27,7 +27,7 @@ const Home: NextPage = () => {
     console.log(generatedBios);
   },[generatedBios])
 
-  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as 1st Grade, 2st Grade. They all have their own topic to be created lesson plan. Please create lesson plan according to studentgradelevel and topic.  Now studentgradelevel is " + vibe + " and topic is " + bio + "\n. Your response must be formatted using HTML for easier readability, including paragraph tags, line breaks, headings and bold titles where applicable.";
+  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as 1st Grade, 2st Grade. They all have their own topic to be created lesson plan. Please create lesson plan according to studentgradelevel and topic.  Now studentgradelevel is " + vibe + " and topic is " + bio + "\n. Your response must be formatted using HTML Elements for easier readability, including paragraph tags, line breaks, headings and bold titles where applicable, no need to create Full HTML Page including head, title elements";
 
   const generateBio = async (e: any) => {
     e.preventDefault();
