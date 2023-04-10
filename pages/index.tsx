@@ -8,12 +8,14 @@ import Footer from "../components/Footer";
 import Github from "../components/GitHub";
 import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
+import parse from 'html-react-parser';
+
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
   const [vibe, setVibe] = useState<VibeType>("1st Grade");
-  const [generatedBios, setGeneratedBios] = useState<String>("");
+  const [generatedBios, setGeneratedBios] = useState<string>("");
 
   const bioRef = useRef<null | HTMLDivElement>(null);
 
@@ -147,7 +149,7 @@ const Home: NextPage = () => {
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         <div className="space-y-10 my-10">
-          {generatedBios && (
+          {/* {generatedBios && (
             <>
               <div>
                 <h2
@@ -179,7 +181,8 @@ const Home: NextPage = () => {
                   })}
               </div>
             </>
-          )}
+          )} */}
+          {parse(generatedBios)}
         </div>
       </main>
       <Footer />
