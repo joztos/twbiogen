@@ -23,9 +23,8 @@ const Home: NextPage = () => {
     }
   };
 
-  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as 1st Grade, 2st Grade. They all have their own topic to be created lesson plan. Please create best lesson plan according to studentgradelevel and topic. Now studentgradelevel is " + vibe + " and topic is " + bio + "\n";
+  const prompt = "I am creating lesson plan application for students. We have several studentgradelevels such as 1st Grade, 2st Grade. They all have their own topic to be created lesson plan. Please create lesson plan according to studentgradelevel and topic and format in HTML so that I can use that in my react project. Now studentgradelevel is " + vibe + " and topic is " + bio + "\n";
 
-  console.log(prompt);
   const generateBio = async (e: any) => {
     e.preventDefault();
     setGeneratedBios("");
@@ -144,6 +143,7 @@ const Home: NextPage = () => {
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         <div className="space-y-10 my-10">
+          {console.log(generatedBios)}
           {generatedBios && (
             <>
               <div>
