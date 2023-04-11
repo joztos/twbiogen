@@ -7,7 +7,7 @@ export default function Header() {
       <div className="flex space-x-3">
         <Image
           alt="Custom Logo"
-          src="https://drive.google.com/uc?id=1dSfqMquSlUpfgqUB2CjdMi2Fv10TYOwx"
+          src="https://im.ge/i/IBXuyY"
           className="sm:w-12 sm:h-12 w-8 h-8 object-contain"
           width={48}
           height={48}
