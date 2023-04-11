@@ -1,17 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Header() {
+const Header: React.FC = () => {
   return (
     <header className="flex justify-between items-center w-full mt-5 border-b-2 pb-7 sm:px-4 px-2">
       <div className="flex space-x-3">
-        <Image
-          alt="Custom Logo"
-          src="https://im.ge/i/IBXuyY"
-          className="sm:w-12 sm:h-12 w-8 h-8 object-contain"
-          width={48}
-          height={48}
-        />
+        <Link href="/" passHref>
+          <a className="flex items-center">
+            <Image
+              alt="Custom Logo"
+              src="https://i.im.ge/2023/04/11/IBXuyY.EMDILOGO.png"
+              className="object-contain"
+              width={120}
+              height={48}
+            />
+          </a>
+        </Link>
       </div>
       <Image
         alt="Vercel Icon"
@@ -22,4 +26,6 @@ export default function Header() {
       />
     </header>
   );
-}
+};
+
+export default Header;
