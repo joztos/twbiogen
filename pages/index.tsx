@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useRef, useState,  useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import DropDown, { VibeType } from "../components/DropDown";
 import Footer from "../components/Footer";
@@ -9,7 +9,6 @@ import Github from "../components/GitHub";
 import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
 import parse from 'html-react-parser';
-
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
@@ -27,7 +26,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     console.log(generatedBios);
-  },[generatedBios])
+  }, [generatedBios])
 
   const prompt = "Estoy creando una aplicación que genera planeaciones de clase para estudiantes. Contamos con varios niveles de grado de estudiantes, como Primero de Primaria, Segundo de Primaria.. Todos ellos tienen su propio tema para crear una planeación de clase. Por favor, crea un planeación de clase larga y perfecta de acuerdo al nivel de grado del estudiante y al tema..  grado del estudiante es " + vibe + " el tema es " + bio + "\n. Your response must be formatted using HTML Elements for easier readability, including paragraph tags, line breaks, headings and bold titles where applicable, no need to create Full HTML Page including head, title elements";
 
@@ -49,7 +48,6 @@ const Home: NextPage = () => {
       throw new Error(response.statusText);
     }
 
-    // This data is a ReadableStream
     const data = response.body;
     if (!data) {
       return;
